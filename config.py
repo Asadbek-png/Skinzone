@@ -1,3 +1,7 @@
-BOT_TOKEN = "BOTFATHER_TOKENINGNI_BU_YERGA_QO'Y"
-ADMIN_ID = 123456789
-DATABASE_URL = "sqlite:///skinzone.db"
+import os
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///skinzone.db")
+
+ADMIN_IDS = []
