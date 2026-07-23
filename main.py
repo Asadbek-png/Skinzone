@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+app = FastAPI(title="SkinZone API")
 
 @app.get("/")
-def home():
-    return {"status": "SkinZone API ishlayapti 🚀"}
+async def root():
+    return {
+        "status": "online",
+        "project": "SkinZone"
+    }
