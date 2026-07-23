@@ -1,10 +1,11 @@
 import random
 
+SKINS = [
+    ("AK-47 | Redline", 120),
+    ("AWP | Asiimov", 450),
+    ("M4A1-S | Printstream", 900),
+    ("Karambit | Doppler", 5000),
+]
+
 def open_case():
-    skins = [
-        ("AK-47 | Redline", 100),
-        ("AWP | Asiimov", 500),
-        ("M4A1-S | Printstream", 1000),
-        ("Karambit | Doppler", 5000)
-    ]
-    return random.choice(skins)
+    return random.choice(SKINS)
