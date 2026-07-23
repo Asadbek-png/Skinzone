@@ -1,9 +1,14 @@
-from telegram import Update
-from telegram.ext import ContextTypes
+from aiogram import Router
+from aiogram.types import Message
 from utils import open_case
 
-async def case(update: Update, context: ContextTypes.DEFAULT_TYPE):
+router = Router()
+
+@router.message(lambda message: message.text == "🎲 Case")
+async def case_handler(message: Message):
     skin, price = open_case()
-    await update.message.reply_text(
-        f"🎲 Sizga tushdi:\n\n🔫 {skin}\n💰 Qiymati: {price} coin"
+    await message.answer(
+        f"🎲 Sizga tushdi:\n\n"
+        f"🔫 {skin}\n"
+        f"💰 Qiymati: {price} coin"
     )
