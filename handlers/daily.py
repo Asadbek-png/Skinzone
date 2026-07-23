@@ -1,7 +1,11 @@
-from telegram import Update
-from telegram.ext import ContextTypes
+from aiogram import Router
+from aiogram.types import Message
 
-async def daily(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(
-        "🎁 Kunlik bonus: +100 coin"
+router = Router()
+
+@router.message(lambda message: message.text == "🎁 Daily Bonus")
+async def daily_handler(message: Message):
+    await message.answer(
+        "🎁 Tabriklaymiz!\n\n"
+        "Siz 100 coin oldingiz."
     )
