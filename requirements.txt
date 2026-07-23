@@ -1,6 +1,5 @@
+aiogram==3.13.1
 fastapi
 uvicorn
-python-telegram-bot
 sqlalchemy
-psycopg2-binary
 python-dotenv
