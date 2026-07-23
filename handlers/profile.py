@@ -1,7 +1,12 @@
-from telegram import Update
-from telegram.ext import ContextTypes
+from aiogram import Router
+from aiogram.types import Message
 
-async def profile(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(
-        "👤 Profil\n\n💰 Balans: 0"
+router = Router()
+
+@router.message(lambda message: message.text == "👤 Profil")
+async def profile_handler(message: Message):
+    await message.answer(
+        "👤 Profil\n\n"
+        "💰 Balans: 0 coin\n"
+        "🎁 Daily bonus: Mavjud"
     )
