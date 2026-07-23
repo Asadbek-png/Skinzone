@@ -5,5 +5,8 @@ from aiogram.types import Message
 router = Router()
 
 @router.message(CommandStart())
-async def start(message: Message):
-    await message.answer("Salom! Skinzone botiga xush kelibsiz.")
+async def start_handler(message: Message):
+    await message.answer(
+        "🎉 SkinZone botiga xush kelibsiz!\n\n"
+        "Bot ishga tushdi."
+    )
